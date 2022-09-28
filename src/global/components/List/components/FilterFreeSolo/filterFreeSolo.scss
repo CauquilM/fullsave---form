@@ -1,0 +1,64 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2021 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../../../../ressources/styles/variables.scss";
+@import "../../../../ressources/styles/mixins.scss";
+
+.filterFreeSolo {
+  margin-left: map-get($spacing, unit) * 2 !important;
+  .MuiInputBase-root {
+    max-width: 60px;
+    transition-duration: map-get($durations, standard);
+    height: map-get($spacing, unit) * 4;
+
+    &.Mui-focused {
+      transition-duration: map-get($durations, standard);
+      max-width: 200px;
+    }
+  }
+  label {
+    color: map-get($primary, light);
+    font-size: 13px;
+    &.Mui-focused {
+      color: map-get($primary, light);
+    }
+    &.Mui-error {
+      color: map-get($error, main);
+    }
+
+    &.MuiInputLabel-outlined {
+      @include translate(14px, 7px);
+      &.MuiInputLabel-shrink {
+        @include transform(translate(14px, -6px) scale(0.8));
+      }
+    }
+  }
+  div {
+    border-radius: 50px;
+    &:hover {
+      background-color: map-get($grey, 100) !important;
+    }
+    fieldset {
+      border-color: map-get($primary, light);
+    }
+  }
+  input {
+    padding: map-get($spacing, unit) / 1.2 map-get($spacing, unit) / 1.2
+      map-get($spacing, unit) / 1.2 map-get($spacing, unit) * 2;
+    color: map-get($primary, light);
+  }
+}
+.filterFreeSoloHasValue {
+  .MuiInputBase-root {
+    max-width: 200px;
+  }
+}

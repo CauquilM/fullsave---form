@@ -1,0 +1,240 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2020 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "variables";
+@import "mixins";
+
+.cardFS {
+  overflow: visible !important;
+  @include md {
+    width: 100%;
+    margin-right: map-get($spacing, unit) * 5;
+  }
+  &-avatar {
+    background-color: map-get($common, white) !important;
+  }
+  &-header {
+    .MuiCardHeader-title {
+      font-size: 1.5em;
+      color: map-get($primary, main);
+    }
+    .MuiCardHeader-action {
+      a {
+        &:hover {
+          color: map-get($grey, 700);
+        }
+      }
+    }
+    &-link {
+      font-size: 1.5rem !important;
+      font-weight: initial !important;
+      color: map-get($primary, main) !important;
+      padding: 0 !important;
+      &:hover {
+        color: map-get($primary, main);
+      }
+    }
+    &-avatar {
+      color: map-get($common, white);
+      background-color: map-get($primary, main) !important;
+    }
+    &-subheader {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      span {
+        font-size: 1.1em;
+      }
+      &-chip {
+        margin: map-get($spacing, unit) map-get($spacing, unit) 0 0;
+        @include md {
+          margin: 0 map-get($spacing, unit) * 2 0 0;
+        }
+        svg {
+          font-size: 22px !important;
+        }
+      }
+    }
+    &-subtitle {
+      margin-right: map-get($spacing, unit);
+      @include md {
+        margin-right: map-get($spacing, unit) * 5;
+      }
+    }
+  }
+  &-chip {
+    margin-left: map-get($spacing, unit);
+    margin-bottom: map-get($spacing, unit);
+  }
+  &-content {
+    padding: map-get($spacing, unit);
+    color: map-get($grey, 600);
+    .noText-italic {
+      display: inline-block;
+      margin: map-get($spacing, unit) 0;
+      padding: map-get($spacing, unit) * 0.7;
+    }
+    &-label {
+      margin-left: map-get($spacing, unit) !important;
+      &-withMargin {
+        margin-right: map-get($spacing, unit);
+      }
+    }
+    &-value {
+      color: map-get($grey, 800) !important;
+      border-color: map-get($grey, 400) !important;
+      &:hover {
+        background-color: map-get($grey, 100) !important;
+        text-decoration: none !important;
+      }
+    }
+    &-skeleton {
+      margin: map-get($spacing, unit);
+    }
+    &-title {
+      color: map-get($grey, 600);
+      padding: 0;
+      display: inline-block;
+    }
+    &-dates {
+      width: map-get($width, normal) * 1.1;
+      dl {
+        display: flex;
+        justify-content: space-between;
+        margin: map-get($spacing, unit) 0;
+        font-size: 0.9em;
+        dd {
+          color: map-get($grey, 800);
+        }
+      }
+    }
+    &-mainDates {
+      display: flex;
+      justify-content: flex-start;
+      @include md {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: map-get($spacing, unit) 0;
+        a {
+          margin: map-get($spacing, unit) 0 map-get($spacing, unit)
+            map-get($spacing, unit);
+          font-size: 14px;
+        }
+        button {
+          padding: 3px 5px;
+          font-size: 14px;
+        }
+      }
+    }
+    &-accordion {
+      box-shadow: none !important;
+      width: fit-content;
+      &-avatar {
+        margin-right: map-get($spacing, unit) * 2;
+      }
+      &-summary {
+        padding: 0 !important;
+        background-color: map-get($common, white) !important;
+        min-height: 0 !important;
+        .MuiAccordionSummary-content {
+          margin: 0 !important;
+        }
+      }
+      &-details {
+        color: map-get($grey, 600);
+        padding: 0 !important;
+      }
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    &-label {
+      margin-right: map-get($spacing, unit) * 2;
+    }
+  }
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+    color: map-get($grey, 600);
+    font-size: 0.9em;
+    margin: map-get($spacing, unit) map-get($spacing, unit) 0
+      map-get($spacing, unit);
+  }
+}
+
+.miniCard {
+  @include rwdMax(1279) {
+    display: grid !important;
+  }
+  &-content {
+    &-list {
+      @include md {
+        max-width: 80%;
+      }
+    }
+    color: map-get($grey, 600);
+    .cardFS-content-accordion {
+      width: 100%;
+    }
+    &-noData {
+      min-height: map-get($width, small);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &-noData {
+    min-height: map-get($width, normal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-avatar {
+    background-color: map-get($common, white) !important;
+  }
+  &-avatarBorder {
+    background-color: map-get($common, white) !important;
+    border: solid map-get($primary, main) 2px !important;
+  }
+  &-list {
+    margin-top: map-get($spacing, unit) * 2;
+    ul {
+      padding: 0;
+      li {
+        display: flex;
+        align-items: center;
+        margin: map-get($spacing, unit) 0;
+        a {
+          color: map-get($grey, 600);
+        }
+        .noText-italic {
+          margin-left: map-get($spacing, unit);
+        }
+      }
+    }
+  }
+}

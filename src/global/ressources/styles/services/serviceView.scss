@@ -1,0 +1,134 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2019 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../variables";
+@import "../mixins";
+
+.service,
+.ServiceEdit,
+.ServiceCreate {
+  flex-grow: 1;
+  &-title {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &-header {
+    padding: map-get($spacing, unit) * 2;
+    background-color: map-get($common, bandeau);
+    @include relative();
+    .title {
+      letter-spacing: 1px;
+      text-align: left;
+      color: map-get($common, white);
+      font-size: 20px;
+      margin-bottom: 5px;
+      margin-top: 0;
+      @media screen and (min-width: map-get($breakpoints, sm)) {
+        font-size: 24px;
+      }
+    }
+    .button {
+      margin-right: 0 !important;
+      &-edit {
+        @include absolute(
+          $top: map-get($spacing, unit) * 2,
+          $right: map-get($spacing, unit) * 2
+        );
+      }
+    }
+    &-subscribed {
+      background-color: map-get($primary, subscribed);
+    }
+    &-building {
+      background-color: map-get($third, building);
+    }
+    &-terminated {
+      background-color: map-get($secondary, terminated);
+    }
+    &-delivered {
+      background-color: map-get($primary, delivered);
+    }
+    &-etat {
+      color: map-get($common, white);
+    }
+  }
+
+  &-section {
+    padding: map-get($spacing, unit) map-get($spacing, unit) * 2;
+    border-bottom: 1px solid map-get($grey, 500);
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  &-subInfo {
+    background-color: map-get($grey, 200);
+    padding: map-get($spacing, unit) * 2;
+    color: map-get($grey, 700);
+    .create,
+    .update {
+      display: inline-block;
+      font-style: italic;
+    }
+    .archived {
+      label {
+        margin-left: 0;
+        margin-left: 0;
+      }
+    }
+  }
+  &-archived {
+    background-color: map-get($grey, 400);
+    padding: map-get($spacing, unit) * 2;
+    color: map-get($grey, 700);
+  }
+  .textField {
+    margin-top: 0;
+    min-width: 80%;
+  }
+  .iconPhone {
+    margin-right: 15px;
+    border-radius: 100px;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    @include relative();
+    &.icon svg {
+      fill: map-get($common, white);
+      @include absolute($top: 50%, $left: 50%);
+      @include translate(-50%, -50%);
+    }
+  }
+  h3 {
+    color: map-get($grey, 600);
+    text-transform: uppercase;
+    font-family: $fontFamily;
+    font-weight: $fontWeightRegular;
+  }
+
+  .nameService,
+  .refService,
+  .cardDate {
+    text-align: left;
+    margin-bottom: 20px;
+    &-title {
+      color: map-get($grey, 600);
+      text-transform: uppercase;
+    }
+    pre {
+      font-family: $fontFamily;
+      margin: 0;
+      white-space: pre-line;
+    }
+  }
+}

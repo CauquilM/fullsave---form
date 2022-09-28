@@ -1,0 +1,84 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2021 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../../../ressources/styles/mixins.scss";
+@import "../../../ressources/styles/variables.scss";
+
+.commonList {
+  &-sort {
+    display: inline-flex;
+    width: fit-content;
+    text-align: right;
+    &-order {
+      div,
+      select,
+      label {
+        border: none;
+        color: map-get($primary, light);
+      }
+      div {
+        &:hover {
+          fieldset {
+            border-color: map-get($primary, light) !important;
+            border-width: 2px;
+          }
+        }
+      }
+      fieldset {
+        color: map-get($primary, light);
+        border: 1px solid map-get($primary, light);
+        border-radius: 4px 0 0 4px;
+        &:hover {
+          border: 1px solid map-get($primary, light);
+        }
+      }
+      select {
+        padding: map-get($spacing, unit);
+        &:focus {
+          background-color: map-get($common, white);
+        }
+
+        option {
+          color: map-get($grey, 800);
+          &:hover {
+            background-color: map-get($grey, 300);
+          }
+        }
+      }
+      label {
+        &.MuiInputLabel-outlined {
+          @include translate(14px, 10px);
+          &.MuiInputLabel-shrink {
+            @include transform(translate(14px, -6px) scale(0.75));
+          }
+        }
+      }
+    }
+    &-desc {
+      border-radius: 0 4px 4px 0;
+      border: 1px solid map-get($primary, light);
+      outline: none;
+      background-color: map-get($primary, light);
+      transition-duration: map-get($durations, shorter);
+      width: 50px;
+      text-align: center;
+      color: map-get($grey, 100);
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($color: map-get($primary, light), $alpha: 0.8);
+      }
+      &:focus {
+        outline: none !important;
+      }
+    }
+  }
+}

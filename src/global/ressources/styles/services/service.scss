@@ -1,0 +1,65 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2019 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../variables";
+@import "../mixins";
+
+.viewServiceRoot {
+  @include relative();
+s
+  .button {
+    margin-bottom: 20px;
+    margin-right: 20px;
+  }
+  &-message {
+    @include absolute($top: 0, $left: 50%);
+    @include translate($x: -50%, $y: 0);
+  }
+  &-component {
+    background-color: map-get($common, bandeau);
+    .toggleComponent {
+      border-left: 1px solid map-get($common, white);
+
+      button {
+        width: 100%;
+        height: 100%;
+        &:hover {
+          background-color: initial;
+        }
+      }
+      svg {
+        font-size: 40px;
+        color: map-get($common, white);
+      }
+    }
+    &-header {
+      @include relative();
+      padding: map-get($spacing, unit) * 2 map-get($spacing, unit) * 2
+        map-get($spacing, unit) * 3;
+      background-color: map-get($common, bandeau);
+      p {
+        color: map-get($common, white);
+      }
+
+      .button {
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        &-edit {
+          @include absolute(
+            $top: map-get($spacing, unit) * 2,
+            $right: map-get($spacing, unit) * 2
+          );
+        }
+      }
+    }
+  }
+}

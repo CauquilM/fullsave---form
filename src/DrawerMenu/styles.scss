@@ -1,0 +1,59 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2020 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../global/ressources/styles/variables";
+@import "../global/ressources/styles/mixins.scss";
+
+.drawer {
+  @include lg {
+    width: 190px;
+    flex-shrink: 0;
+  }
+  @include rwd(1500) {
+    width: $drawerWidth;
+  }
+
+  &-image {
+    width: map-get($spacing, unit) * 2.2;
+  }
+
+  &-list {
+    &-item {
+      padding: map-get($spacing, unit) !important;
+      @include lg {
+        padding: map-get($spacing, unit) map-get($spacing, unit) * 1.5 !important;
+      }
+      @include rwd(1500) {
+        padding: map-get($spacing, unit) map-get($spacing, unit) * 2 !important;
+      }
+      &-icon {
+        min-width: 35px;
+        @include rwd(1500) {
+          min-width: 40px;
+        }
+      }
+      span {
+        font-size: 13px;
+
+        @include rwd(1500) {
+          font-size: 16px;
+        }
+      }
+    }
+    &-subList {
+      padding-left: map-get($spacing, unit) * 3 !important;
+      @include rwd(1500) {
+        padding-left: map-get($spacing, unit) * 4 !important;
+      }
+    }
+  }
+}

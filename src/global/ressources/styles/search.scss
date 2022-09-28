@@ -1,0 +1,69 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2020 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+/* search
+=====================================================*/
+.search {
+  @include relative();
+  border-radius: map-get($shape, borderRadius);
+  background-color: rgba(map-get($common, white), 0.15);
+  margin-right: map-get($spacing, unit) * 2;
+  margin-left: 0;
+  width: 100%;
+  padding-left: map-get($spacing, unit);
+  transition: map-get($durations, standard);
+  &:hover {
+    background-color: rgba(map-get($common, white), 0.25);
+  }
+  @include sm {
+    margin-left: map-get($spacing, unit) * 3;
+    width: 20rem;
+  }
+
+  .inputRoot,
+  .inputInput {
+    input {
+      transition: map-get($durations, standard);
+      &:focus,
+      &:active {
+        color: map-get($common, white);
+      }
+    }
+  }
+  .inputRoot {
+    color: inherit;
+    width: 100%;
+  }
+  .inputInput {
+    transition: map-get($transitions, easeIn);
+    margin: 0;
+    width: 100%;
+    @include md {
+      width: 100%;
+    }
+  }
+  .searchIcon {
+    width: map-get($spacing, unit) * 7;
+    height: 100%;
+    @include absolute($right: 0px);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    &:hover {
+      cursor: pointer;
+    }
+    svg {
+      @include translate(75%, 21%);
+    }
+  }
+}

@@ -1,0 +1,73 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2021 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../../ressources/styles/variables.scss";
+
+.commonList {
+  &-header {
+    &-title {
+      text-align: center;
+      #design {
+        display: inline-block;
+        font-size: 16px;
+        span {
+          font-size: 25px;
+          text-transform: uppercase;
+        }
+      }
+      h1 {
+        display: inline-block;
+        &::after {
+          content: "";
+          display: block;
+          background-color: map-get($grey, 400);
+          width: 100%;
+          height: 1px;
+          margin-top: map-get($spacing, unit);
+        }
+      }
+    }
+    &-actions {
+      justify-content: flex-end;
+      #actions {
+        &-add {
+          display: flex;
+          justify-content: flex-end;
+          padding-right: map-get($spacing, unit) * 3;
+          margin-bottom: map-get($spacing, unit);
+          a {
+            display: inline-block;
+            font-size: 15px;
+          }
+        }
+        &-filters {
+          display: flex;
+          padding-left: map-get($spacing, unit) * 3;
+          margin-bottom: map-get($spacing, unit) * 2;
+          &-button {
+            button {
+              display: flex;
+              span {
+                font-size: 16px;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+        &-sort {
+          text-align: right;
+          padding-right: map-get($spacing, unit) * 3;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2021 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../../../../../global/ressources/styles/variables.scss";
+
+#skeletonList {
+  #skeletonCount {
+    padding-left: map-get($spacing, unit) * 2;
+  }
+  .cardSkeleton {
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: map-get($grey, 500);
+    }
+
+    &-header {
+      padding-bottom: 0;
+      &-actions {
+        width: 100px;
+        padding-right: map-get($spacing, unit);
+        padding-top: map-get($spacing, unit);
+      }
+    }
+  }
+}

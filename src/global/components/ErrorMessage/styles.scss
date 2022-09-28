@@ -1,0 +1,33 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2020 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../../ressources/styles/variables.scss";
+@import "../../ressources/styles/mixins.scss";
+
+.errorMessage {
+  text-align: center;
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: map-get($spacing, unit) * 2 0;
+    h2 {
+      color: map-get($error, main);
+      padding: 0 !important;
+      margin-left: map-get($spacing, unit);
+    }
+  }
+  span {
+    color: map-get($grey, 600);
+    font-size: 1.2em;
+  }
+}

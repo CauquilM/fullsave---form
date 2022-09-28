@@ -1,0 +1,41 @@
+/*
+ * ====================[ START FS LICENSE ]====================
+ * © 2019 FULLSAVE.
+ * Ce document ne fait pas partie du domaine public. Il est et demeure la
+ * propriété exclusive de FULLSAVE.
+ * Il est protégé par le Code de la Propriété intellectuelle et le droit
+ * d’auteur.
+ * Toute reproduction est interdite. Toute représentation est interdite.
+ * Tous droits réservés. Droits non cessibles.
+ * =====================[ END FS LICENSE ]=====================
+ */
+
+@import "../../global/ressources/styles/variables";
+@import "../../global/ressources/styles/mixins";
+
+.ch {
+  &-mainTitle {
+    text-align: center;
+  }
+  &-view {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2em;
+    margin-right: 2em;
+    &-change {
+      cursor: pointer;
+      color: map-get($primary, main);
+    }
+    &-select {
+      width: 330px;
+    }
+  }
+
+  .select {
+    &__control {
+      &--is-focused {
+        border-color: #08a9dd !important;
+      }
+    }
+  }
+}

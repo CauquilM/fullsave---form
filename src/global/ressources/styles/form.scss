@@ -1,0 +1,217 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2020 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "mixins.scss";
+@import "variables.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-header {
+    display: inline-flex;
+    justify-content: space-between;
+    color: map-get($primary, main);
+    font-size: 1.5em !important;
+    font-weight: 400 !important;
+    &-title {
+      display: inline-flex;
+    }
+    &-icon {
+      margin-right: map-get($spacing, unit);
+    }
+  }
+  &-expansion {
+    box-shadow: none !important;
+    &-summary {
+      padding: 0 !important;
+      h3 {
+        color: map-get($grey, 700) !important;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    &-detail {
+      display: flex;
+      flex-direction: column;
+      padding: 0 !important;
+    }
+  }
+  &-responsive {
+    @include lg {
+      width: 60%;
+    }
+    @include xl {
+      width: 50%;
+    }
+  }
+  &-flex {
+    @include lg {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &-part {
+    width: 90%;
+    @include xl {
+      width: 70%;
+    }
+    h3 {
+      color: map-get($grey, 700) !important;
+      width: 100%;
+    }
+  }
+  &-validation {
+    justify-content: flex-end;
+    margin: map-get($spacing, unit) * 4 0;
+    &-submit {
+      margin-left: map-get($spacing, unit) * 2;
+    }
+  }
+  &-MultipleFields {
+    @include md {
+      width: 100%;
+      display: flex;
+      align-items: top;
+    }
+    &-button {
+      margin-left: map-get($spacing, unit) !important;
+      height: map-get($spacing, unit) * 6;
+      @include relative($top: 15px !important);
+    }
+    &-marginRight {
+      margin-right: map-get($spacing, unit) * 3 !important;
+    }
+    &-icon {
+      svg {
+        @include relative($top: 30px !important);
+      }
+    }
+    &-marginLeft {
+      margin-left: map-get($spacing, unit) * 3 !important;
+    }
+  }
+  &-item {
+    margin: map-get($spacing, unit) * 1.5 0;
+    width: 100%;
+    .react-select {
+      .select__control {
+        .select__value-container {
+          padding: map-get($spacing, unit);
+          .select__single-value {
+            width: 95%;
+          }
+        }
+      }
+    }
+    .required {
+      font-size: 0.75rem;
+      margin-top: map-get($spacing, unit) / 2;
+      color: map-get($grey, 600);
+    }
+
+    &-error {
+      width: 100%;
+      /*Force css error for DateTimeField*/
+      .MuiFormControl-root {
+        label {
+          color: map-get($error, dark) !important;
+        }
+        .MuiInputBase-root {
+          fieldset {
+            border-color: map-get($error, dark) !important;
+          }
+        }
+      }
+
+      span {
+        color: map-get($error, dark);
+      }
+      .required {
+        color: map-get($error, dark);
+      }
+    }
+
+    &-field {
+      width: 100%;
+      margin-top: map-get($spacing, unit);
+      .Mui-focused fieldset {
+        border-color: map-get($primary, main) !important;
+      }
+      label.MuiInputLabel-outlined {
+        z-index: 0 !important;
+      }
+      label.Mui-focused {
+        color: map-get($primary, main) !important;
+      }
+      .Mui-error {
+        color: map-get($error, dark) !important;
+        fieldset {
+          border-color: map-get($error, dark) !important;
+        }
+      }
+    }
+    &-paper {
+      width: 100%;
+      display: table;
+    }
+  }
+
+  &-button {
+    &-contained {
+      box-shadow: none !important;
+      border: none !important;
+      color: map-get($common, white) !important;
+      &:focus {
+        outline: none !important;
+      }
+      &-blue {
+        background-color: map-get($primary, main) !important;
+      }
+      &-pink {
+        background-color: map-get($pink, main) !important;
+      }
+    }
+    &-outlined {
+      box-shadow: none !important;
+      &:focus {
+        outline: none !important;
+      }
+      &-blue {
+        border-color: map-get($primary, main) !important;
+        color: map-get($primary, main) !important;
+      }
+      &-pink {
+        border-color: map-get($pink, main) !important;
+        color: map-get($pink, main) !important;
+      }
+      &-grey {
+        border-color: map-get($grey, 500) !important;
+        color: map-get($grey, 500) !important;
+      }
+    }
+  }
+  .MuiButton-root {
+    transition: none !important;
+  }
+
+  &-box {
+    color: map-get($primary, main) !important;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04) !important;
+    }
+  }
+
+  &-label {
+    color: map-get($grey, 600) !important;
+  }
+}

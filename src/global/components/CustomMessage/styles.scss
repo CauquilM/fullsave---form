@@ -1,0 +1,40 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2020 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../../ressources/styles/variables.scss";
+@import "../../ressources/styles/mixins.scss";
+
+.customMessage {
+  min-height: map-get($spacing, unit) * 40;
+  text-align: center;
+  padding-bottom: 1rem;
+  div {
+    text-align: center;
+  }
+  &-icon {
+    svg {
+      font-size: 15rem !important;
+      color: map-get($grey, 300);
+    }
+  }
+  &-message {
+    span {
+      color: map-get($grey, 400);
+      font-size: 1.4em;
+    }
+    h2 {
+      color: map-get($grey, 500);
+      font-size: 2em;
+      padding: 0 !important;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2021 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "variables";
+
+.cardList {
+  box-shadow: none;
+  &-header {
+    padding-bottom: 0 !important;
+    &-title {
+      h2 {
+        color: map-get($primary, main);
+        padding: 0;
+        margin: 0;
+        font-size: 24px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    &-chip {
+      margin-left: map-get($spacing, unit) * 2;
+    }
+  }
+  &-item {
+    margin: map-get($spacing, unit) 0;
+    display: flex;
+    align-items: center;
+    color: map-get($grey, 600);
+    &-icon {
+      margin-right: map-get($spacing, unit) / 2;
+      @include relative($top: -1px);
+      @include lg() {
+        @include relative($top: 0px);
+      }
+    }
+    &-value {
+      color: map-get($grey, 800) !important;
+      &:hover {
+        background-color: map-get($grey, 100) !important;
+      }
+    }
+  }
+}

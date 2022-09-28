@@ -1,0 +1,69 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2019 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "variables";
+.loaders {
+  &-header {
+    background-color: map-get($common, bandeau);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  &-logo {
+    height: 40vmin;
+    display: block;
+    max-width: 100%;
+    margin-bottom: map-get($spacing, unit) * 3;
+  }
+}
+
+.text {
+  p {
+    color: white;
+  }
+  &-animation-svg {
+    margin-top: 10px;
+  }
+
+  &-animation p {
+    font-size: 20px;
+    margin-bottom: 0;
+    opacity: 1;
+  }
+
+  &-animation-finish p {
+    opacity: 1;
+  }
+}
+.loaderLight {
+  &-header {
+    background-color: map-get($background, default);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+}
+@keyframes loaders-logo-spin {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

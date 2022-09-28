@@ -1,0 +1,151 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2019 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+/* POSITION */
+/// Shorthand mixin for offset positioning
+/// @param {String} $position - Either `relative`, `absolute` or `fixed`
+/// @param {Length} $top [null] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+/// @param {} $important [null] - !important
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $important: null
+) {
+  position: $position $important;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+/// Shorthand mixin for absolute positioning
+/// Serves as an alias for `position(absolute, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+/// Shorthand mixin for relative positioning
+/// Serves as an alias for `position(relative, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+/// Shorthand mixin for fixed positioning
+/// Serves as an alias for `position(fixed, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+// generic transform
+@mixin transform($transforms) {
+  transform: $transforms !important;
+}
+// rotate
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+// translate
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+// skew
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+//mixin pour du responsive
+// Small devices
+@mixin sm {
+  @media (min-width: map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: map-get($breakpoints, xl)) {
+    @content;
+  }
+}
+
+// Custom devices min width
+@mixin rwd($screen) {
+  @media (min-width: $screen+"px") {
+    @content;
+  }
+}
+
+// Custom devices max width
+@mixin rwdMax($screen) {
+  @media (max-width: $screen+"px") {
+    @content;
+  }
+}
+
+// Animation par le milieu à l'hover par le milieu
+@mixin animeHoverFromMiddle {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  @include transform(perspective(1px) translateZ(0));
+  @include relative();
+  &:before {
+    content: "";
+    @include absolute();
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    background: map-get($common, white);
+    height: 2px;
+    transition-property: left, right;
+    transition-duration: map-get($durations, shorter);
+    transition-timing-function: ease-out;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      left: 0;
+      right: 0%;
+    }
+  }
+}

@@ -1,0 +1,315 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2020 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "variables";
+
+.button {
+  padding: map-get($spacing, unit);
+  border-style: solid;
+  border-width: 1px;
+  width: auto;
+  transition-duration: map-get($durations, standard);
+  display: flex;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+    color: map-get($primary, contrastText);
+    background-color: map-get($primary, main);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    border: 1px solid map-get($grey, 400);
+    color: map-get($grey, 400);
+    background-color: transparent;
+    &:hover {
+      border: 1px solid map-get($grey, 400);
+      background-color: inherit;
+      color: map-get($grey, 400);
+      cursor: default;
+    }
+  }
+  &-margin {
+    margin-left: map-get($spacing, unit);
+  }
+
+  &-danger {
+    border: 1px solid map-get($secondary, main);
+    background-color: transparent;
+    color: map-get($secondary, main);
+    &:hover {
+      background-color: map-get($secondary, main);
+      color: map-get($secondary, contrastText);
+    }
+  }
+  &-link {
+    color: map-get($primary, main);
+    border-color: map-get($primary, main);
+    background-color: map-get($common, white);
+    &:hover {
+      background-color: map-get($primary, main);
+      color: map-get($common, white);
+    }
+  }
+  &-edit {
+    color: map-get($common, white);
+    border-color: map-get($common, white);
+    background-color: transparent;
+    &:hover {
+      background-color: map-get($common, white);
+      color: map-get($common, bandeau);
+    }
+  }
+  &-submit {
+    border-color: map-get($third, dark);
+    background-color: map-get($third, dark);
+    color: map-get($common, white);
+    &:hover {
+      border-color: map-get($third, main);
+      background-color: map-get($third, main);
+    }
+  }
+  &-cancel {
+    border-color: map-get($grey, 500);
+    background-color: transparent;
+    color: initial;
+    &:hover {
+      background-color: map-get($grey, 500);
+      color: map-get($common, white);
+    }
+  }
+  // new button
+  &-add {
+    background-color: map-get($primary, main);
+    color: map-get($common, white);
+    border-radius: 4px;
+    transition-duration: map-get($durations, shorter);
+    border: none;
+    outline: none;
+    font-weight: 500;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  // new button
+  &-link2 {
+    padding: map-get($spacing, unit);
+    border-radius: 4px;
+    color: map-get($common, white);
+    background-color: map-get($primary, dark);
+    transition-duration: map-get($durations, shorter);
+    border: none;
+    outline: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+      color: map-get($common, white) !important;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+  &-edit2 {
+    padding: map-get($spacing, unit);
+    border-radius: 4px;
+    color: map-get($common, white);
+    background-color: map-get($orange, 50);
+    transition-duration: map-get($durations, shorter);
+    border: none;
+    outline: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      color: map-get($common, white);
+      opacity: 0.8;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+  &-validate {
+    margin-left: map-get($spacing, unit);
+    padding: map-get($spacing, unit);
+    background-color: map-get($third, dark);
+    color: map-get($common, white);
+    border-radius: 4px;
+    transition-duration: map-get($durations, shorter);
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 18px;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+      color: map-get($common, white);
+    }
+    &:focus {
+      outline: none !important;
+    }
+    &:disabled {
+      background-color: rgba(map-get($third, dark), 0.5);
+      &:hover {
+        cursor: default;
+        opacity: 1;
+      }
+    }
+  }
+  &-danger2 {
+    margin-left: map-get($spacing, unit);
+    padding: map-get($spacing, unit);
+    background-color: map-get($secondary, main);
+    color: map-get($common, white);
+    border-radius: 4px;
+    transition-duration: map-get($durations, shorter);
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 18px;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+      color: map-get($common, white);
+    }
+    &:focus {
+      outline: none !important;
+    }
+    &:disabled {
+      background-color: rgba(map-get($third, dark), 0.5);
+      &:hover {
+        cursor: default;
+        opacity: 1;
+      }
+    }
+  }
+  &-cancel2 {
+    padding: map-get($spacing, unit);
+    border-radius: 4px;
+    background-color: map-get($common, white);
+    transition-duration: map-get($durations, shorter);
+    color: map-get($grey, 700);
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 18px;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: map-get($grey, 200);
+    }
+    &:disabled {
+      color: map-get($grey, 400);
+      &:hover {
+        cursor: default;
+        background-color: map-get($common, white);
+      }
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+  &-filters {
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: map-get($grey, 200);
+    transition-duration: map-get($durations, shorter);
+    color: map-get($grey, 800);
+    &:hover {
+      cursor: pointer;
+      background-color: map-get($grey, 100);
+      color: map-get($grey, 700);
+    }
+    &:focus {
+      outline: none !important;
+    }
+    svg {
+      vertical-align: middle;
+      font-size: 22px;
+      height: 18px;
+    }
+    span {
+      display: inline-block;
+    }
+  }
+  &-disabled {
+    opacity: 0.8;
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+  &-more {
+    font-weight: 400;
+    font-size: 16px;
+    padding: 6px;
+    margin-top: 8px;
+    border-radius: 4px;
+    background-color: map-get($common, white);
+    transition-duration: map-get($durations, shorter);
+    color: map-get($grey, 700);
+    border: 1px solid map-get($grey, 400);
+    outline: none;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: map-get($grey, 200);
+      color: map-get($grey, 700);
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+  &-error {
+    background-color: map-get($error, main) !important;
+    color: map-get($common, white) !important;
+    border-radius: 4px;
+    transition-duration: map-get($durations, shorter);
+    border: none;
+    outline: none;
+    font-weight: 500;
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+}

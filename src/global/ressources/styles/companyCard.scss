@@ -1,0 +1,54 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2019 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "./variables";
+
+.cardCompany {
+  text-align: left;
+  margin-bottom: 20px;
+  &-headerContact {
+    color: map-get($grey, 600);
+    text-transform: uppercase;
+  }
+  .icon {
+    margin-right: 10px;
+    display: inline-block;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .phone {
+    margin-bottom: 5px;
+    a {
+      vertical-align: top;
+    }
+  }
+  .companySpanTitle {
+    color: map-get($grey, 600);
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .mail {
+    margin-bottom: 10px;
+  }
+  .adress {
+    p {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .cardCompanyLink {
+    margin-bottom: 0px !important;
+    display: inline-block;
+  }
+}

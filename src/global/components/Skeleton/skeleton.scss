@@ -1,0 +1,40 @@
+/*
+* ====================[ START FS LICENSE ]====================
+* © 2019 FULLSAVE.
+* Ce document ne fait pas partie du domaine public. Il est et demeure la
+* propriété exclusive de FULLSAVE.
+* Il est protégé par le Code de la Propriété intellectuelle et le droit
+* d’auteur.
+* Toute reproduction est interdite. Toute représentation est interdite.
+* Tous droits réservés. Droits non cessibles.
+* =====================[ END FS LICENSE ]=====================
+*/
+
+@import "../../ressources/styles/variables.scss";
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    map-get($grey, 300),
+    map-get($grey, 100),
+    map-get($grey, 300)
+  );
+  background-size: 400% 400%;
+  animation: animationSkeleton 3s linear infinite;
+  border-radius: map-get($shape, borderRadius);
+}
+
+@keyframes animationSkeleton {
+  0% {
+    background-position: 0% 50%;
+    opacity: 1;
+  }
+  50% {
+    background-position: 100% 51%;
+    opacity: 0.8;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 1;
+  }
+}
