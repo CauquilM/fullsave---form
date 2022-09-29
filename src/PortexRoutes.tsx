@@ -16,7 +16,7 @@ import Home from "./home/Home";
 import ContactRoutes from "./directory/components/contacts";
 
 import { CustomMessage } from "./global/components/CustomMessage";
-import AuthForm from "./authForm/AuthForm";
+import AuthForm from "./login/login";
 
 const PortexRoutes = () => {
   return useRoutes([
