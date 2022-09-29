@@ -12,15 +12,14 @@
 
 import { useRoutes } from "react-router-dom";
 import FreeBreakfastIcon from "@mui/icons-material/FreeBreakfast";
-import Home from "./home/Home";
+// import Home from "./home/Home";
 import ContactRoutes from "./directory/components/contacts";
 
 import { CustomMessage } from "./global/components/CustomMessage";
-import AuthForm from "./login/login";
+// import Login from "./login/login";
 
 const PortexRoutes = () => {
   return useRoutes([
-    { path: "/", element: <Home /> },
     {
       path: "*",
       element: (
@@ -30,10 +29,6 @@ const PortexRoutes = () => {
           message="Page introuvable"
         />
       ),
-    },
-    {
-      path: "/login",
-      element: <AuthForm />,
     },
 
     ...ContactRoutes(),
